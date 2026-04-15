@@ -1,0 +1,56 @@
+2026-04-15 11:22:49,051 | INFO | trading_bot | API Request | POST https://testnet.binancefuture.com/fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001, 'recvWindow': 5000, 'timestamp': 1776232369051, 'signature': '2301f6eea7d14e491b35a5a0584fce52b924d6def10efeb9cf97872a11457220'}
+2026-04-15 11:22:50,103 | INFO | trading_bot | API Response | status=401 | body={"code":-2014,"msg":"API-key format invalid."}
+2026-04-15 11:22:50,103 | ERROR | trading_bot | HTTP error: 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&recvWindow=5000&timestamp=1776232369051&signature=2301f6eea7d14e491b35a5a0584fce52b924d6def10efeb9cf97872a11457220 | body=
+2026-04-15 11:22:50,104 | ERROR | trading_bot | Unhandled error
+Traceback (most recent call last):
+  File "C:\Users\biswa\OneDrive\Desktop\trading_bot\cli.py", line 66, in main
+    result = place_and_format_order(
+        client=client,
+    ...<4 lines>...
+        price=price,
+    )
+  File "C:\Users\biswa\OneDrive\Desktop\trading_bot\bot\orders.py", line 2, in place_and_format_order
+    response = client.place_order(
+        symbol=symbol,
+    ...<3 lines>...
+        price=price,
+    )
+  File "C:\Users\biswa\OneDrive\Desktop\trading_bot\bot\client.py", line 77, in place_order
+    return self._request("POST", "/fapi/v1/order", params=params, signed=True)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\biswa\OneDrive\Desktop\trading_bot\bot\client.py", line 54, in _request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\biswa\AppData\Local\Programs\Python\Python314\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&recvWindow=5000&timestamp=1776232369051&signature=2301f6eea7d14e491b35a5a0584fce52b924d6def10efeb9cf97872a11457220
+2026-04-15 11:22:50,379 | INFO | trading_bot | API Request | POST https://testnet.binancefuture.com/fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.001, 'recvWindow': 5000, 'price': 95000.0, 'timeInForce': 'GTC', 'timestamp': 1776232370379, 'signature': '7573b2ef2ec03f6d6b4aac2bd3a3cb8c5b0356595aa6d5fc41f1dfee0b7f0f95'}
+2026-04-15 11:22:51,539 | INFO | trading_bot | API Response | status=401 | body={"code":-2014,"msg":"API-key format invalid."}
+2026-04-15 11:22:51,540 | ERROR | trading_bot | HTTP error: 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.001&recvWindow=5000&price=95000.0&timeInForce=GTC&timestamp=1776232370379&signature=7573b2ef2ec03f6d6b4aac2bd3a3cb8c5b0356595aa6d5fc41f1dfee0b7f0f95 | body=
+2026-04-15 11:22:51,540 | ERROR | trading_bot | Unhandled error
+Traceback (most recent call last):
+  File "C:\Users\biswa\OneDrive\Desktop\trading_bot\cli.py", line 66, in main
+    result = place_and_format_order(
+        client=client,
+    ...<4 lines>...
+        price=price,
+    )
+  File "C:\Users\biswa\OneDrive\Desktop\trading_bot\bot\orders.py", line 2, in place_and_format_order
+    response = client.place_order(
+        symbol=symbol,
+    ...<3 lines>...
+        price=price,
+    )
+  File "C:\Users\biswa\OneDrive\Desktop\trading_bot\bot\client.py", line 77, in place_order
+    return self._request("POST", "/fapi/v1/order", params=params, signed=True)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\biswa\OneDrive\Desktop\trading_bot\bot\client.py", line 54, in _request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\biswa\AppData\Local\Programs\Python\Python314\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.001&recvWindow=5000&price=95000.0&timeInForce=GTC&timestamp=1776232370379&signature=7573b2ef2ec03f6d6b4aac2bd3a3cb8c5b0356595aa6d5fc41f1dfee0b7f0f95
+2026-04-15 11:41:36,993 | INFO | trading_bot | API Request | POST https://testnet.binancefuture.com/fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001, 'recvWindow': 5000, 'timestamp': 1776233496993, 'signature': '8ce21f3ef0d266835378d6b8fc4db3d998c033f07bfd1fcbbeac2db93737f57c'}
+2026-04-15 11:41:37,849 | INFO | trading_bot | API Response | status=200 | body={"orderId":13036377801,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"CHiWtD6QTqZwnf8yGdoQR9","price":"0.00","avgPrice":"0.00","origQty":"0.0010","executedQty":"0.0000","cumQty":"0.0000","cumQuote":"0.000000","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1776233497368}
+2026-04-15 11:41:38,162 | INFO | trading_bot | API Request | POST https://testnet.binancefuture.com/fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.001, 'recvWindow': 5000, 'price': 95000.0, 'timeInForce': 'GTC', 'timestamp': 1776233498162, 'signature': '158224627992b96e3576a4606479498fbda36651a05dc20f15f77f2fb063fb34'}
+2026-04-15 11:41:38,702 | INFO | trading_bot | API Response | status=200 | body={"orderId":13036377824,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"19CA7gHRIbXJzspLTSpSZ2","price":"95000.00","avgPrice":"0.00","origQty":"0.0010","executedQty":"0.0000","cumQty":"0.0000","cumQuote":"0.000000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1776233498229}
